@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="button" value="firebase" onclick="boton();">
+
+<script  type="text/javascript">
+	
+function boton(){
+	alert("base de datos OK");
+	var database = firebase.database();	
+	firebase.database().ref('hola/primera').update({
+		nombre: "miguel",
+		apellido: "moreno"
+	});
+}
+</script>
+
+</body>
+
+
+	
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAIfwtvs04n9ysR0ncwmbx4pce-Pwr8xCE",
+    authDomain: "jvsc-838dc.firebaseapp.com",
+    databaseURL: "https://jvsc-838dc.firebaseio.com",
+    projectId: "jvsc-838dc",
+    storageBucket: "jvsc-838dc.appspot.com",
+    messagingSenderId: "646531753420"
+  };
+  firebase.initializeApp(config);
+</script>
+</html>

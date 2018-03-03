@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+
+		
+	</title>
+</head>
+<body>
+	<input type="text" id="texto"  size="10" name="texto1" value="">
+	<input type="button"  value="ver" onclick="ver()"> 
+	<!--<p> nombre: <span id="nombre"> </span> </p> -->
+<script type="text/javascript">
+		
+		function ver(){
+			alert("hola");
+			var database = firebase.database();
+		var ref=	database.ref('hola/primera/apellido');
+	 	ref.on("value", function(snapshot){
+	 			var test  = snapshot.val();
+	 			alert(test);
+	 			document.getElementById("texto").value= test;
+	 			document.write(test);
+	 	});
+
+
+//alert(test);
+}
+		</script>
+</body>
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAIfwtvs04n9ysR0ncwmbx4pce-Pwr8xCE",
+    authDomain: "jvsc-838dc.firebaseapp.com",
+    databaseURL: "https://jvsc-838dc.firebaseio.com",
+    projectId: "jvsc-838dc",
+    storageBucket: "jvsc-838dc.appspot.com",
+    messagingSenderId: "646531753420"
+  };
+  firebase.initializeApp(config);
+</script>
+
+</html>
+
